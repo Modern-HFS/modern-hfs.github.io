@@ -24,7 +24,7 @@ function docwrite(uris,id = null) {
     } else if (uris[i].includes(".css") == true) {
       total += "<li" + "nk rel=\"stylesheet\" src=\"" + uris[i] + "\">";
     } else {
-      total += unsafe(getFile(uris[i]));
+      total += escapeHtml(getFile(uris[i]));
     }
   }
   for (var i = 0; i < total.length; i++) {
