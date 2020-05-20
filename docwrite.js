@@ -17,8 +17,8 @@ xmlhttp.open("GET",file,false);
 xmlhttp.send();
 xmlDoc=xmlhttp.responseText;
 }
-function docwrite(uris,id = null) {
-  for (var i = 0; i < uris.length; i++) {
+function docwrite(uris,id) {
+  for (var i = 0; i < uris.length; i++;) {
     if (uris[i].includes(".js") == true) {
       total += "<scr" + "ipt type=\"application/javascript\" src=\"" + uris[i] + "\">" + "<" + "/" + "script>";
     } else if (uris[i].includes(".css") == true) {
@@ -27,7 +27,7 @@ function docwrite(uris,id = null) {
       total += escapeHtml(getFile(uris[i]));
     }
   }
-  for (var i = 0; i < total.length; i++) {
+  for (var i = 0; i < total.length; i++;) {
     var element = GetElementById(id);
     element.innerHTML += total[i];
   }
